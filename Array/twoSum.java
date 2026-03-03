@@ -10,10 +10,14 @@ class Solution {
 
         for (int i = 0; i < nums.length; i++) {
             int compliment = target - nums[i];
+            // System.out.println("loop -> " + i);
+            // System.out.println("target - current " + target + " - " + nums[i] + " => " + compliment);
+            // System.out.println("Current Map"+ map);
             if(map.containsKey(compliment)) {
                 return new int[] {map.get(compliment), i};
             }
             map.put(nums[i], i);
+            // System.out.println("Added Map"+ map);
         }
 
         return new int[] {};
